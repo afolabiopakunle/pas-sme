@@ -180,35 +180,35 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Create asset',
-        link: '/pages/extra-components/calendar',
+        link: '/pages/layout/tabs',
       },
       {
         title: 'Create vendor',
-        link: '/pages/extra-components/progress-bar',
+        link: '/pages/layout/tabs',
       },
       {
         title: 'Checkout',
-        link: '/pages/extra-components/spinner',
+        link: '/pages/layout/tabs',
       },
       {
         title: 'Asset disposal',
-        link: '/pages/extra-components/alert',
+        link: '/pages/layout/tabs',
       },
       {
         title: 'Fixed asset register',
-        link: '/pages/extra-components/calendar-kit',
+        link: '/pages/layout/tabs',
       },
       {
         title: 'Depreciation schedule',
-        link: '/pages/extra-components/chat',
+        link: '/pages/layout/tabs',
       },
       {
         title: 'Equipment based analysis',
-        link: '/pages/extra-components/chat',
+        link: '/pages/layout/tabs',
       },
       {
         title: 'Reports',
-        link: '/pages/extra-components/chat',
+        link: '/pages/layout/tabs',
       },
     ],
   },
@@ -218,26 +218,27 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Personal income',
-        link: '/pages/maps/gmaps',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Company inh/leaflet',
+        title: 'Company income',
+        link: '/pages/layout/tabs',
       },
       {
         title: 'Value added',
-        link: '/pages/maps/bubble',
+        link: '/pages/layout/tabs',
       },
       {
         title: 'Capital allowance',
-        link: '/pages/maps/searchmap',
+        link: '/pages/layout/tabs',
       },
       {
         title: 'Capital allowance table',
-        link: '/pages/maps/searchmap',
+        link: '/pages/layout/tabs',
       },
       {
         title: 'Partnership list',
-        link: '/pages/maps/searchmap',
+        link: '/pages/layout/tabs',
       },
     ],
   },
