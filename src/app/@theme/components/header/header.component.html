@@ -3,7 +3,8 @@
     <a (click)="toggleSidebar()" href="#" class="sidebar-toggle">
       <nb-icon icon="menu-2-outline"></nb-icon>
     </a>
-    <a class="logo" href="#" (click)="navigateHome()"><img src="./assets/svg/passmelogo.svg" alt="logo"></a>
+    <a *ngIf="currentTheme==='default'" class="logo" href="#" (click)="navigateHome()"><img src="./assets/svg/passmeLogoDark.svg" alt="logo"></a>
+    <a *ngIf="currentTheme==='dark'" class="logo" href="#" (click)="navigateHome()"><img src="./assets/svg/passmeLogoLight.svg" alt="logo"></a>
   </div>
 </div>
 

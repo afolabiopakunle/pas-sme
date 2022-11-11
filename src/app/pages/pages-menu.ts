@@ -8,9 +8,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
-    title: 'Admin',
+    title: 'Administration',
     icon: 'home-outline',
     link: '/pages/iot-dashboard',
+    children: [
+      {
+        title: 'Roles & Permissions',
+        link: '/pages/layout/tabs',
+      },
+    ],
   },
   // {
   //   title: 'FEATURES',
@@ -22,7 +28,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: 'Income statement',
-        link: '/pages/layout/stepper',
+        link: '/pages/layout/tabs',
       },
       {
         title: 'Balance sheet',
@@ -30,217 +36,208 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
       {
         title: 'Cash flow',
-        link: '/pages/layout/infinite-list',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Accordion',
-        link: '/pages/layout/accordion',
+        title: 'General report',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Tabs',
+        title: 'Journal ledger',
+        pathMatch: 'prefix',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'General ledger',
+        pathMatch: 'prefix',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'Trial balance',
+        pathMatch: 'prefix',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'Age analysis of debt',
+        pathMatch: 'prefix',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'Creditors statement',
+        pathMatch: 'prefix',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'Debtors statement',
+        pathMatch: 'prefix',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'Settings',
         pathMatch: 'prefix',
         link: '/pages/layout/tabs',
       },
     ],
   },
   {
-    title: 'Forms',
+    title: 'Inventory',
     icon: 'edit-2-outline',
     children: [
       {
-        title: 'Form Inputs',
-        link: '/pages/forms/inputs',
+        title: 'Create inventory',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Form Layouts',
-        link: '/pages/forms/layouts',
+        title: 'POS',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Buttons',
-        link: '/pages/forms/buttons',
+        title: 'Vendors',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Datepicker',
-        link: '/pages/forms/datepicker',
+        title: 'Reports',
+        link: '/pages/layout/tabs',
       },
     ],
   },
   {
-    title: 'UI Features',
+    title: 'Payroll',
     icon: 'keypad-outline',
-    link: '/pages/ui-features',
+    link: '/pages/layout/tabs',
     children: [
       {
-        title: 'Grid',
-        link: '/pages/ui-features/grid',
+        title: 'Create employee',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Icons',
-        link: '/pages/ui-features/icons',
+        title: 'Employee list',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Typography',
-        link: '/pages/ui-features/typography',
+        title: 'Create loan',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Animated Searches',
-        link: '/pages/ui-features/search-fields',
+        title: 'Loan list',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'Setup payroll',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'Payroll summary',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'Report',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'Settings',
+        link: '/pages/layout/tabs',
       },
     ],
   },
   {
-    title: 'Modal & Overlays',
+    title: 'Invoicing',
     icon: 'browser-outline',
     children: [
       {
-        title: 'Dialog',
-        link: '/pages/modal-overlays/dialog',
+        title: 'Create invoice',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Window',
-        link: '/pages/modal-overlays/window',
+        title: 'Invoice summary',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Popover',
-        link: '/pages/modal-overlays/popover',
+        title: 'Credit summary',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Toastr',
-        link: '/pages/modal-overlays/toastr',
+        title: 'Payment summary',
+        link: '/pages/layout/tabs',
       },
       {
-        title: 'Tooltip',
-        link: '/pages/modal-overlays/tooltip',
+        title: 'Tax summary',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'Bad debt',
+        link: '/pages/layout/tabs',
+      },
+      {
+        title: 'Settings',
+        link: '/pages/layout/tabs',
       },
     ],
   },
   {
-    title: 'Extra Components',
+    title: 'Fixed Asset Management',
     icon: 'message-circle-outline',
     children: [
       {
-        title: 'Calendar',
+        title: 'Create asset',
         link: '/pages/extra-components/calendar',
       },
       {
-        title: 'Progress Bar',
+        title: 'Create vendor',
         link: '/pages/extra-components/progress-bar',
       },
       {
-        title: 'Spinner',
+        title: 'Checkout',
         link: '/pages/extra-components/spinner',
       },
       {
-        title: 'Alert',
+        title: 'Asset disposal',
         link: '/pages/extra-components/alert',
       },
       {
-        title: 'Calendar Kit',
+        title: 'Fixed asset register',
         link: '/pages/extra-components/calendar-kit',
       },
       {
-        title: 'Chat',
+        title: 'Depreciation schedule',
+        link: '/pages/extra-components/chat',
+      },
+      {
+        title: 'Equipment based analysis',
+        link: '/pages/extra-components/chat',
+      },
+      {
+        title: 'Reports',
         link: '/pages/extra-components/chat',
       },
     ],
   },
   {
-    title: 'Maps',
+    title: 'Tax management',
     icon: 'map-outline',
     children: [
       {
-        title: 'Google Maps',
+        title: 'Personal income',
         link: '/pages/maps/gmaps',
       },
       {
-        title: 'Leaflet Maps',
-        link: '/pages/maps/leaflet',
+        title: 'Company inh/leaflet',
       },
       {
-        title: 'Bubble Maps',
+        title: 'Value added',
         link: '/pages/maps/bubble',
       },
       {
-        title: 'Search Maps',
+        title: 'Capital allowance',
         link: '/pages/maps/searchmap',
       },
-    ],
-  },
-  {
-    title: 'Charts',
-    icon: 'pie-chart-outline',
-    children: [
       {
-        title: 'Echarts',
-        link: '/pages/charts/echarts',
+        title: 'Capital allowance table',
+        link: '/pages/maps/searchmap',
       },
       {
-        title: 'Charts.js',
-        link: '/pages/charts/chartjs',
-      },
-      {
-        title: 'D3',
-        link: '/pages/charts/d3',
-      },
-    ],
-  },
-  {
-    title: 'Editors',
-    icon: 'text-outline',
-    children: [
-      {
-        title: 'TinyMCE',
-        link: '/pages/editors/tinymce',
-      },
-      {
-        title: 'CKEditor',
-        link: '/pages/editors/ckeditor',
-      },
-    ],
-  },
-  {
-    title: 'Tables & Data',
-    icon: 'grid-outline',
-    children: [
-      {
-        title: 'Smart Table',
-        link: '/pages/tables/smart-table',
-      },
-      {
-        title: 'Tree Grid',
-        link: '/pages/tables/tree-grid',
-      },
-    ],
-  },
-  {
-    title: 'Miscellaneous',
-    icon: 'shuffle-2-outline',
-    children: [
-      {
-        title: '404',
-        link: '/pages/miscellaneous/404',
-      },
-    ],
-  },
-  {
-    title: 'Auth',
-    icon: 'lock-outline',
-    children: [
-      {
-        title: 'Login',
-        link: '/auth/login',
-      },
-      {
-        title: 'Register',
-        link: '/auth/register',
-      },
-      {
-        title: 'Request Password',
-        link: '/auth/request-password',
-      },
-      {
-        title: 'Reset Password',
-        link: '/auth/reset-password',
+        title: 'Partnership list',
+        link: '/pages/maps/searchmap',
       },
     ],
   },
