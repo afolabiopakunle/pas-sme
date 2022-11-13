@@ -11,4 +11,13 @@ export class LoginComponent extends NbLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  user = {
+    email: '',
+    password: '',
+  };
+
+  login() {
+    console.log(this.user);
+  }
+
 }
