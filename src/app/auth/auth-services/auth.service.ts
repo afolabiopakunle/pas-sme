@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   API_URL: string = environment.baseAPIURL;
@@ -60,7 +60,7 @@ export class AuthService {
       .subscribe(data => {
         this.countryD = data;
         this.getCountryUpdated.next({
-          countryD: [...this.countryD]
+          countryD: [...this.countryD],
         });
       });
   }
@@ -75,7 +75,7 @@ export class AuthService {
       .subscribe(data => {
         this.currencyD = data;
         this.getCurrencyUpdated.next({
-          currencyD: this.currencyD
+          currencyD: this.currencyD,
         });
       });
   }
@@ -98,7 +98,7 @@ export class AuthService {
       .subscribe(data => {
         this.business = data;
         this.getBusinessUpdated.next({
-          business: this.business
+          business: this.business,
         });
       });
   }
@@ -109,7 +109,7 @@ export class AuthService {
       .subscribe(data => {
         this.businessId = data;
         this.getBusinessIdUpdated.next({
-          businessId: this.businessId
+          businessId: this.businessId,
         });
       });
   }
@@ -118,12 +118,12 @@ export class AuthService {
     this.http.get<any>(`${this.API_URL}organization/${this.key}/dashboard`).subscribe(
       data => {
         this.dash = data;
-        this.graph = data['revenues']
+        this.graph = data['revenues'];
         this.get_dashboard_updated.next({
           dash: this.dash,
-          graph: this.graph
+          graph: this.graph,
         });
-      }
+      },
     );
   }
 
@@ -133,7 +133,7 @@ export class AuthService {
       .subscribe(data => {
         this.businessType = data;
         this.getBusinessTypeUpdated.next({
-          businessType: [...this.businessType]
+          businessType: [...this.businessType],
         });
       });
   }
@@ -148,7 +148,7 @@ export class AuthService {
       .subscribe(data => {
         this.sectorD = data;
         this.getSectorUpdated.next({
-          sectorD: [...this.sectorD]
+          sectorD: [...this.sectorD],
         });
       });
   }
@@ -170,7 +170,7 @@ export class AuthService {
   }
 
   signUp = data => {
-    this._spinner.show();
+    // this._spinner.show();
     this.http
       .post<{
         user: any;
@@ -179,11 +179,11 @@ export class AuthService {
       }>(`${this.API_URL}users/`, data)
       .subscribe(
         response => {
-          this._spinner.hide();
+          // this._spinner.hide();
           this.signIn(data);
         },
         error => {
-        }
+        },
       );
   }
 
@@ -224,7 +224,7 @@ export class AuthService {
               localStorage.setItem('key', k);
               this.router.navigate(['/dashboard/main-dashboard']);
             }
-            this._spinner.hide();
+            // this._spinner.hide();
           }
         },
         error => {
@@ -232,7 +232,7 @@ export class AuthService {
           // this.pnotify.notify('An error occured', `${error.message}`, 'error');
           this.authenticationStatusListener.next(false);
           // this._spinner.hide();
-        }
+        },
       );
   }
 
@@ -247,7 +247,7 @@ export class AuthService {
     return {
       tenant,
       token,
-      user
+      user,
     };
   }
 
