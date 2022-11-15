@@ -27,15 +27,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       value: 'default',
       name: 'Light',
     },
-
-    // {
-    //   value: 'cosmic',
-    //   name: 'Cosmic',
-    // },
-    // {
-    //   value: 'corporate',
-    //   name: 'Corporate',
-    // },
   ];
 
   currentTheme = 'default';
@@ -53,7 +44,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe((token: NbAuthJWTToken) => {
         if (token.isValid()) {
           this.user = token; // here we receive a payload from the token
-          // tslint:disable-next-line:no-console
           console.log(this.user.token);
         }
 
