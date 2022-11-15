@@ -47,8 +47,11 @@ export class RegisterComponent {
         ]),
         confirmPassword: new FormControl('', [
           Validators.required,
-          Validators.minLength(6),
+          Validators.minLength(8),
         ]),
+      terms: new FormControl(null, [
+        Validators.required,
+      ]),
       },
       {
         validator: this.ConfirmedValidator('password', 'confirmPassword'),
@@ -91,26 +94,28 @@ export class RegisterComponent {
     this.errors = this.messages = [];
     this.submitted = true;
 
-    this.service.register(this.strategy, this.user).subscribe((result: NbAuthResult) => {
-      this.submitted = false;
-      if (result.isSuccess()) {
-        this.messages = result.getMessages();
-      } else {
-        this.errors = result.getErrors();
-      }
-
-      const redirect = result.getRedirect();
-      if (redirect) {
-        setTimeout(() => {
-          return this.router.navigateByUrl(redirect);
-        }, this.redirectDelay);
-      }
-      this.cd.detectChanges();
-    });
-
-    const {email, password} = this.signupForm.value;
-    const data: ISignup = {email, password};
-    this.authService.signUp(data);
+    console.log(this.signupForm);
+    return;
+    // this.service.register(this.strategy, this.user).subscribe((result: NbAuthResult) => {
+    //   this.submitted = false;
+    //   if (result.isSuccess()) {
+    //     this.messages = result.getMessages();
+    //   } else {
+    //     this.errors = result.getErrors();
+    //   }
+    //
+    //   const redirect = result.getRedirect();
+    //   if (redirect) {
+    //     setTimeout(() => {
+    //       return this.router.navigateByUrl(redirect);
+    //     }, this.redirectDelay);
+    //   }
+    //   this.cd.detectChanges();
+    // });
+    //
+    // const {email, password} = this.signupForm.value;
+    // const data: ISignup = {email, password};
+    // this.authService.signUp(data);
   }
 
   ConfirmedValidator(controlName: string, matchingControlName: string) {

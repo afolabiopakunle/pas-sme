@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { NgxAuthRoutingModule } from './auth-routing.module';
@@ -16,18 +16,19 @@ import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule,
-    NbAlertModule,
-    NbInputModule,
-    NbButtonModule,
-    NbCheckboxModule,
-    NgxAuthRoutingModule,
+    imports: [
+        CommonModule,
+        FormsModule,
+        RouterModule,
+        NbAlertModule,
+        NbInputModule,
+        NbButtonModule,
+        NbCheckboxModule,
+        NgxAuthRoutingModule,
 
-    NbAuthModule,
-  ],
+        NbAuthModule,
+        ReactiveFormsModule
+    ],
   declarations: [
     // ... here goes our new components
     LoginComponent,
