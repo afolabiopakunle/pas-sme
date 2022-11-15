@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
-import { NbToastrService } from '@nebular/theme';
 import { ToasterService } from '../../@core/toaster.service';
 
 @Injectable({
@@ -276,7 +275,6 @@ export class AuthService {
                             business_name: string, email: string, perm: any) => {
     localStorage.setItem('token', token);
     localStorage.setItem('tenant', tenant);
-    // localStorage.setItem('key', business);
     localStorage.setItem('email', email);
     localStorage.setItem('businessName', business_name);
     localStorage.setItem('user', JSON.stringify(user));
@@ -285,7 +283,6 @@ export class AuthService {
 
   automaticAuthenticateUser() {
     const authenticationInformation = this.getAuthenticationData();
-    // console.log(authenticationInformation)
     if (!authenticationInformation) {
       return;
     } else {

@@ -9,7 +9,7 @@ import {
     NbAlertModule,
     NbButtonModule,
     NbCheckboxModule,
-    NbInputModule, NbSelectModule
+    NbInputModule, NbSelectModule,
 } from '@nebular/theme';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -29,7 +29,7 @@ import { OnBoardingComponent } from './on-boarding/on-boarding.component';
 
         NbAuthModule,
         ReactiveFormsModule,
-        NbSelectModule
+        NbSelectModule,
     ],
   declarations: [
     // ... here goes our new components
