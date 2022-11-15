@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { NbToastrService } from '@nebular/theme';
+import { ToasterService } from '../../@core/toaster.service';
 
 @Injectable({
   providedIn: 'root',
@@ -35,7 +36,7 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    private toasterService: NbToastrService,
+    private toasterService: ToasterService,
   ) {}
 
 
@@ -181,7 +182,6 @@ export class AuthService {
       }>(`${this.API_URL}users/`, data)
       .subscribe(
         response => {
-          // this._spinner.hide();
           this.signIn(data);
         },
         error => {
@@ -190,7 +190,6 @@ export class AuthService {
   }
 
   signIn = data => {
-    // this._spinner.show();
     this.http
       .post<any>(`${this.API_URL}users/login/`, data)
       .subscribe(
@@ -318,10 +317,9 @@ export class AuthService {
         localStorage.setItem('key', key);
         localStorage.setItem('businessName', business_name);
         localStorage.setItem('businessType', businessType);
-        // this.pnotify.notify('Business Added', 'Successfully', 'success');
-
+        this.toasterService.showToast('success', 'Business Added!', 'Welcome onboard');
+        this.router.navigate(['/dashboard/main-dashboard']);
       });
-    this.router.navigate(['/dashboard/main-dashboard']);
   }
 
 }
