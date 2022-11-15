@@ -97,30 +97,8 @@ export class RegisterComponent {
       const {email, password} = this.signupForm.value;
       const data: ISignup = {email, password};
       this.authService.signUp(data);
-      // console.log(data);
     }
-    // console.log(this.signupForm);
-    return;
-    // this.service.register(this.strategy, this.user).subscribe((result: NbAuthResult) => {
-    //   this.submitted = false;
-    //   if (result.isSuccess()) {
-    //     this.messages = result.getMessages();
-    //   } else {
-    //     this.errors = result.getErrors();
-    //   }
-    //
-    //   const redirect = result.getRedirect();
-    //   if (redirect) {
-    //     setTimeout(() => {
-    //       return this.router.navigateByUrl(redirect);
-    //     }, this.redirectDelay);
-    //   }
-    //   this.cd.detectChanges();
-    // });
-    //
-    // const {email, password} = this.signupForm.value;
-    // const data: ISignup = {email, password};
-    // this.authService.signUp(data);
+
   }
 
   ConfirmedValidator(controlName: string, matchingControlName: string) {

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
+import { NbToastrService } from '@nebular/theme';
 
 @Injectable({
   providedIn: 'root',
@@ -33,7 +34,8 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    public router: Router,
+    private router: Router,
+    private toasterService: NbToastrService,
   ) {}
 
 
@@ -212,13 +214,9 @@ export class AuthService {
               this.user,
               //  this.business_key,
               this.business_name, this.email, this.permissions);
-            // this.pnotify.notify(
-            //   `Logged in`,
-            //   `Welcome ${response.user.username}`,
-            //   'success'
-            // );
+
             if (this.user.first_login) {
-              this.router.navigate(['/auth', 'onBoarding']);
+              this.router.navigate(['/auth', 'on-boarding']);
             } else {
               const k = response.business.key;
               localStorage.setItem('key', k);

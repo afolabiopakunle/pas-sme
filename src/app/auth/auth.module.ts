@@ -13,6 +13,7 @@ import {
 } from '@nebular/theme';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { OnBoardingComponent } from './on-boarding/on-boarding.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { RegisterComponent } from './register/register.component';
     // ... here goes our new components
     LoginComponent,
     RegisterComponent,
+    OnBoardingComponent,
   ],
 })
 export class NgxAuthModule {
