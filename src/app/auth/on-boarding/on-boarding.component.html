@@ -18,14 +18,75 @@
     </ng-container>
   </div>
 
+  <div class="form-control-group">
+    <label for="sector">Sector:</label>
+    <nb-select id="sector" fullWidth formControlName="sector" (change)="addSector($event.target?.value)">
+      <nb-option *ngFor="let sector of sectorC" value="{{sector.id}}">{{sector.name}}</nb-option>
+    </nb-select>
+  </div>
 
+  <div class="form-control-group">
+    <label for="business_type">Business type:</label>
+    <nb-select id="business_type" fullWidth formControlName="business_type" (change)="addSector($event.target?.value)">
+      <nb-option *ngFor="let business of businessTypeC"  value="{{business.id}}">{{business.name}}</nb-option>
+    </nb-select>
+  </div>
 
+  <div class="form-control-group">
+    <label class="label" for="telephone">Telephone number:</label>
+    <input nbInput
+           formControlName="telephone"
+           id="telephone"
+           name="telephone"
+           placeholder="Telephone:"
+           fullWidth
+    >
+    <ng-container *ngIf="onboardForm.controls.telephone.invalid && onboardForm.controls.telephone.touched">
+      <p class="error-message" *ngIf="onboardForm.controls.telephone.errors?.required">
+        Telephone number is required!
+      </p>
+    </ng-container>
+  </div>
+
+  <div class="form-control-group">
+    <label class="label" for="address">Full address:</label>
+    <input nbInput
+           formControlName="address"
+           id="address"
+           name="address"
+           placeholder="Full address:"
+           fullWidth
+    >
+    <ng-container *ngIf="onboardForm.controls.address.invalid && onboardForm.controls.address.touched">
+      <p class="error-message" *ngIf="onboardForm.controls.address.errors?.required">
+        Address is required!
+      </p>
+    </ng-container>
+  </div>
+
+  <div class="form-control-group">
+    <label for="country">Country:</label>
+    <nb-select id="country" fullWidth formControlName="country">
+      <nb-option value="NGA">Nigeria</nb-option>
+      <nb-option value="GHA">Ghana</nb-option>
+      <nb-option value="UK">UK</nb-option>
+      <nb-option value="USA">USA</nb-option>
+    </nb-select>
+  </div>
+
+  <div class="form-control-group">
+    <label for="country">Currency:</label>
+    <nb-select id="primary_currency" fullWidth formControlName="primary_currency">
+      <nb-option value="NGN">Naira</nb-option>
+      <nb-option value="USD">US Dollars</nb-option>
+    </nb-select>
+  </div>
 
   <button nbButton
           fullWidth
           status="success"
           [disabled]="onboardForm.invalid"
           >
-    Register
+    SAVE
   </button>
 </form>

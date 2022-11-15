@@ -58,37 +58,9 @@ export class RegisterComponent {
       });
   }
 
-  // register(): void {
-  //   this.errors = this.messages = [];
-  //   this.submitted = true;
-  //
-  //   this.service.register(this.strategy, this.user).subscribe((result: NbAuthResult) => {
-  //     this.submitted = false;
-  //     if (result.isSuccess()) {
-  //       this.messages = result.getMessages();
-  //     } else {
-  //       this.errors = result.getErrors();
-  //     }
-  //
-  //     const redirect = result.getRedirect();
-  //     if (redirect) {
-  //       setTimeout(() => {
-  //         return this.router.navigateByUrl(redirect);
-  //       }, this.redirectDelay);
-  //     }
-  //     this.cd.detectChanges();
-  //   });
-  // }
-
   getConfigValue(key: string): any {
     return getDeepFromObject(this.options, key, null);
   }
-
-  // submitForm() {
-  //   const { email, password } = this.signupForm.value;
-  //   const data: ISignup = { email, password };
-  //   this.authService.signUp(data);
-  // }
 
   signUp = () => {
     this.errors = this.messages = [];

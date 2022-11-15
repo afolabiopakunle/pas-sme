@@ -318,7 +318,7 @@ export class AuthService {
         localStorage.setItem('businessName', business_name);
         localStorage.setItem('businessType', businessType);
         this.toasterService.showToast('success', 'Business Added!', 'Welcome onboard');
-        this.router.navigate(['/dashboard/main-dashboard']);
+        this.router.navigate(['/pages/dashboard/']);
       });
   }
 

@@ -38,9 +38,21 @@ export class OnBoardingComponent implements OnInit {
     this.authService.getCountry();
     this.authService.getCurrency();
 
-    this.Sub = this.authService.getCountryUpdater().subscribe(
+    this.Sub = this.authService.getCurrencyUpdater().subscribe(
       data => {
-        this.countryC = data.countryD;
+        this.currencyC = data.currencyD;
+      },
+    );
+
+    this.Sub = this.authService.getBusinessTypeUpdater().subscribe(
+      data => {
+        this.businessTypeC = data.businessType;
+      },
+    );
+
+    this.Sub = this.authService.getSectorUpdater().subscribe(
+      data => {
+        this.sectorC = data.sectorD;
       },
     );
   }
@@ -76,5 +88,6 @@ export class OnBoardingComponent implements OnInit {
     this.toaster.showToast('success', 'Welcome!', 'Successfully signed up');
     this.inItContents();
   }
+
 
 }
