@@ -204,13 +204,11 @@ export class AuthService {
             this.tenant = response.tenant;
             this.user = response.user;
             this.email = response.user.email;
-            // this.business_key = response.business.key;
             this.business_name = response.business.business_name;
             this.permissions = response.permissions;
             this.authenticationStatusListener.next(true);
             this.saveAuthenticationData(this.token, this.tenant,
               this.user,
-              //  this.business_key,
               this.business_name, this.email, this.permissions);
 
             if (this.user.first_login) {
@@ -218,7 +216,7 @@ export class AuthService {
             } else {
               const k = response.business.key;
               localStorage.setItem('key', k);
-              this.router.navigate(['/dashboard/main-dashboard']);
+              this.router.navigate(['/pages', 'dashboard']);
             }
             // this._spinner.hide();
           }
@@ -249,7 +247,6 @@ export class AuthService {
 
   // Logging user out
   logout() {
-    // this.http.get<any>(`${this.API_URL}users/logout/`)
     this.tenant = null;
     this.token = null;
     this.isAuthenticated = false;
@@ -262,7 +259,7 @@ export class AuthService {
     this.clearAuthenticationData();
     this.getAuthenticationStatusListener();
 
-    this.router.navigate(['/auth', 'sign-in']);
+    this.router.navigate(['/auth', 'login']);
     // this.pnotify.notify(
     //   'logged out',
     //   'You\'ve successfully logged out',
