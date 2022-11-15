@@ -36,7 +36,7 @@ import {
     CoreModule.forRoot(),
     ThemeModule.forRoot(),
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {
