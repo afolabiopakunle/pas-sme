@@ -218,7 +218,7 @@ export class AuthService {
             //   'success'
             // );
             if (this.user.first_login) {
-              this.router.navigate(['/auth', 'onboarding']);
+              this.router.navigate(['/auth', 'onBoarding']);
             } else {
               const k = response.business.key;
               localStorage.setItem('key', k);

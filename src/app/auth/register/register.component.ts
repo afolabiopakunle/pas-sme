@@ -93,8 +93,13 @@ export class RegisterComponent {
   signUp = () => {
     this.errors = this.messages = [];
     this.submitted = true;
-
-    console.log(this.signupForm);
+    if (this.signupForm.valid) {
+      const {email, password} = this.signupForm.value;
+      const data: ISignup = {email, password};
+      this.authService.signUp(data);
+      // console.log(data);
+    }
+    // console.log(this.signupForm);
     return;
     // this.service.register(this.strategy, this.user).subscribe((result: NbAuthResult) => {
     //   this.submitted = false;
