@@ -57,4 +57,8 @@ export class RegisterComponent {
     return getDeepFromObject(this.options, key, null);
   }
 
+  submitForm() {
+    console.log('hello world');
+  }
+
 }
