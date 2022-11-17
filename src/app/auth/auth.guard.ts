@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
   canActivate(): boolean| Observable<boolean> | Promise<boolean> {
     const Auth = this.authService.getIsAuthenticated();
     if (!Auth) {
-      this.toaster.showToast('danger', 'Access Denied', 'Log in');
+      // this.toaster.showToast('danger', 'Access Denied', 'Log in');
       this.router.navigate(['/auth', 'login']);
     }
     return Auth;
