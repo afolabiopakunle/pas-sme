@@ -48,7 +48,7 @@ import { ECommerceModule } from '../e-commerce/e-commerce.module';
     NbIconModule,
     NbButtonModule,
     NgxEchartsModule,
-    ECommerceModule
+    ECommerceModule,
   ],
   declarations: [
     DashboardComponent,

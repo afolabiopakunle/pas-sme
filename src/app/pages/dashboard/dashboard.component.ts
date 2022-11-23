@@ -1,5 +1,5 @@
 import {Component, OnDestroy} from '@angular/core';
-import { NbThemeService } from '@nebular/theme';
+import { NbMenuService, NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators' ;
 import { SolarData } from '../../@core/data/solar';
 
@@ -25,7 +25,7 @@ export class DashboardComponent implements OnDestroy {
     type: 'primary',
   };
   rollerShadesCard: CardSettings = {
-    title: 'Roller Shades',
+    title: 'Current Financial Period',
     iconClass: 'nb-roller-shades',
     type: 'success',
   };
@@ -43,10 +43,10 @@ export class DashboardComponent implements OnDestroy {
   statusCards: string;
 
   commonStatusCardsSet: CardSettings[] = [
-    this.lightCard,
+    // this.lightCard,
     this.rollerShadesCard,
-    this.wirelessAudioCard,
-    this.coffeeMakerCard,
+    // this.wirelessAudioCard,
+    // this.coffeeMakerCard,
   ];
 
   statusCardsByThemes: {
@@ -79,7 +79,8 @@ export class DashboardComponent implements OnDestroy {
   };
 
   constructor(private themeService: NbThemeService,
-              private solarService: SolarData) {
+              private solarService: SolarData,
+              private menuService: NbMenuService) {
     this.themeService.getJsTheme()
       .pipe(takeWhile(() => this.alive))
       .subscribe(theme => {
