@@ -70,7 +70,7 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
     NbProgressBarModule,
     NgxEchartsModule,
     NgxChartsModule,
-    LeafletModule,
+    LeafletModule
   ],
   declarations: [
     ECommerceComponent,
@@ -104,10 +104,13 @@ import { EarningLiveUpdateChartComponent } from './earning-card/front-side/earni
     EarningCardFrontComponent,
     EarningCardBackComponent,
     EarningPieChartComponent,
-    EarningLiveUpdateChartComponent,
+    EarningLiveUpdateChartComponent
   ],
   providers: [
-    CountryOrdersMapService,
+    CountryOrdersMapService
   ],
+  exports: [
+    ECommerceChartsPanelComponent
+  ]
 })
 export class ECommerceModule { }

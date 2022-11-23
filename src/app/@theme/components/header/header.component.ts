@@ -120,4 +120,5 @@ export class HeaderComponent implements OnInit, OnDestroy {
       console.log('Profile Clicked ');
     }
   }
+
 }

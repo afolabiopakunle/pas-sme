@@ -211,7 +211,7 @@ export class AuthService {
             this.saveAuthenticationData(this.token, this.tenant,
               this.user,
               this.business_name, this.email, this.permissions);
-
+              this.toasterService.showToast('success', 'You\'re logged in', 'Welcome');
             if (this.user.first_login) {
               this.router.navigate(['/auth', 'on-boarding']);
             } else {
@@ -266,6 +266,7 @@ export class AuthService {
     //   'You\'ve successfully logged out',
     //   'success'
     // );
+    this.toasterService.showToast('success', 'You\'re logged out', 'Sign in');
   }
 
   saveAuthenticationData = (token: string, tenant: string, user: any,
