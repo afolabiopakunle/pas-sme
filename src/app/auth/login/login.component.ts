@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NbLoginComponent} from '@nebular/auth';
+import { NbLoginComponent } from '@nebular/auth';
 import { AuthService } from '../auth-services/auth.service';
 import { ILogin } from '../auth-services/auth.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
       password: ['', [Validators.required]],
     });
   }
+
   ngOnInit(): void {
   }
 
@@ -28,8 +29,8 @@ export class LoginComponent implements OnInit {
   };
 
   login() {
-    const { email, password } = this.signInForm.value;
-    const data: ILogin = { email, password };
+    const {email, password} = this.signInForm.value;
+    const data: ILogin = {email, password};
     this.authService.signIn(data);
   }
 
