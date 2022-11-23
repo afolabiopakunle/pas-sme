@@ -9,6 +9,7 @@ import { SeoService } from './@core/utils/seo.service';
 import { AuthService } from './auth/auth-services/auth.service';
 import { Subscription } from 'rxjs';
 import { environment } from '../environments/environment';
+import { NbMenuService } from '@nebular/theme';
 
 @Component({
   selector: 'ngx-app',
@@ -34,6 +35,7 @@ export class AppComponent implements OnInit {
   constructor(private analytics: AnalyticsService,
               private seoService: SeoService,
               private authService: AuthService,
+              private menuService: NbMenuService,
               ) {
   }
 
@@ -41,5 +43,9 @@ export class AppComponent implements OnInit {
     this.analytics.trackPageViews();
     this.seoService.trackCanonicalChanges();
     this.initContents();
+  }
+
+  startLogout() {
+
   }
 }

@@ -6,6 +6,7 @@ import {LayoutService} from '../../../@core/utils';
 import {map, takeUntil} from 'rxjs/operators';
 import {Subject} from 'rxjs';
 import {NbAuthJWTToken, NbAuthService} from '@nebular/auth';
+import { AuthService } from '../../../auth/auth-services/auth.service';
 
 @Component({
   selector: 'ngx-header',
@@ -39,7 +40,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private userService: UserData,
               private layoutService: LayoutService,
               private breakpointService: NbMediaBreakpointsService,
-              private authService: NbAuthService) {
+              private authService: NbAuthService,
+              private myAuthService: AuthService) {
     this.authService.onTokenChange()
       .subscribe((token: NbAuthJWTToken) => {
         if (token.isValid()) {
@@ -72,6 +74,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe(themeName => this.currentTheme = themeName);
+
+    this.menuService.onItemClick().subscribe(( event ) => {
+      this.onItemSelection(event.item.title);
+    });
+
   }
 
   ngOnDestroy() {
@@ -101,5 +108,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+
+  onItemSelection( title ) {
+    if ( title === 'Log out' ) {
+      // Do something on Log out
+      this.myAuthService.logout();
+      console.log('Log out Clicked ');
+    } else if ( title === 'Profile' ) {
+      // Do something on Profile
+      console.log('Profile Clicked ');
+    }
   }
 }
