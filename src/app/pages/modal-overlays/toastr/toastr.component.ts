@@ -70,7 +70,7 @@ export class ToastrComponent {
     const config = {
       status: type,
       destroyByClick: this.destroyByClick,
-      duration: this.duration,
+      duration: 3000,
       hasIcon: this.hasIcon,
       position: this.position,
       preventDuplicates: this.preventDuplicates,

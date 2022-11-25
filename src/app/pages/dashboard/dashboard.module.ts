@@ -9,6 +9,7 @@ import {
   NbSelectModule,
   NbListModule,
   NbIconModule,
+  NbDatepickerModule, NbInputModule,
 
 } from '@nebular/theme';
 import { NgxEchartsModule } from 'ngx-echarts';
@@ -32,24 +33,29 @@ import { TrafficComponent } from './traffic/traffic.component';
 import { TrafficChartComponent } from './traffic/traffic-chart.component';
 import { FormsModule } from '@angular/forms';
 import { ECommerceModule } from '../e-commerce/e-commerce.module';
+import { SetFinancialYearComponent } from './set-financial-year/set-financial-year.component';
+import { NbMomentDateModule } from '@nebular/moment';
 
 @NgModule({
-  imports: [
-    FormsModule,
-    ThemeModule,
-    NbCardModule,
-    NbUserModule,
-    NbButtonModule,
-    NbTabsetModule,
-    NbActionsModule,
-    NbRadioModule,
-    NbSelectModule,
-    NbListModule,
-    NbIconModule,
-    NbButtonModule,
-    NgxEchartsModule,
-    ECommerceModule,
-  ],
+    imports: [
+        FormsModule,
+        ThemeModule,
+        NbCardModule,
+        NbUserModule,
+        NbButtonModule,
+        NbTabsetModule,
+        NbActionsModule,
+        NbRadioModule,
+        NbSelectModule,
+        NbListModule,
+        NbIconModule,
+        NbButtonModule,
+        NgxEchartsModule,
+        ECommerceModule,
+        NbDatepickerModule.forRoot(),
+        NbInputModule,
+      NbMomentDateModule,
+    ],
   declarations: [
     DashboardComponent,
     StatusCardComponent,
@@ -67,6 +73,7 @@ import { ECommerceModule } from '../e-commerce/e-commerce.module';
     SolarComponent,
     TrafficComponent,
     TrafficChartComponent,
+    SetFinancialYearComponent,
   ],
 })
 export class DashboardModule { }

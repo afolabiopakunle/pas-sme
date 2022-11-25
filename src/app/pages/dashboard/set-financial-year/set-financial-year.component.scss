@@ -1,0 +1,16 @@
+@import '../../../@theme/styles/themes';
+
+@include nb-install-component() {
+  input {
+    width: 100%;
+  }
+
+  .cancel {
+    margin-right: 1rem;
+  }
+}
+
+
+.nb-theme-default [nbInput].size-medium:not(.input-full-width) {
+  max-width: 13rem !important;
+}

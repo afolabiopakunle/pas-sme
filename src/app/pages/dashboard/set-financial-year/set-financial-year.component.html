@@ -1,0 +1,29 @@
+<nb-card>
+  <nb-card-header>Set Financial Period</nb-card-header>
+  <div class="row">
+    <div class="col-md-6">
+      <nb-card-body>
+        <input nbInput
+               style="max-width: 13rem"
+               #startDate
+               placeholder="Start Date"
+               [nbDatepicker]="startDatePicker">
+        <nb-datepicker #startDatePicker format="yyyy-MM-dd"></nb-datepicker>
+      </nb-card-body>
+    </div>
+    <div class="col-md-6">
+      <nb-card-body>
+        <input nbInput
+               style="max-width: 13rem"
+               #endDate
+               placeholder="End Date"
+               [nbDatepicker]="endDatePicker">
+        <nb-datepicker #endDatePicker format="yyyy-MM-dd"></nb-datepicker>
+      </nb-card-body>
+    </div>
+  </div>
+  <nb-card-footer class="text-center">
+    <button class="cancel" nbButton status="danger" (click)="cancel()">Cancel</button>
+    <button nbButton status="success" (click)="submit(startDate.value, endDate.value)">Submit</button>
+  </nb-card-footer>
+</nb-card>
